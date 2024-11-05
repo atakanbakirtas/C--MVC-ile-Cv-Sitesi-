@@ -1,0 +1,77 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Erişim Engellendi</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .error-container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #282828;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 80px;
+            color: #e94560;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #00f5d4;
+            margin-bottom: 30px;
+        }
+
+        a {
+            color: #00f5d4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            a:hover {
+                color:white;
+            }
+
+        .btn-back {
+            background-color: #00f5d4;
+            color: #121212;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+            .btn-back:hover {
+                background-color: #e94560;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <h1>403</h1>
+        <h2>Erişim Engellendi</h2>
+        <p>Bu sayfaya erişim izniniz bulunmamaktadır. Lütfen geri dönün veya yetkili kişilere başvurun.</p>
+        <a href="/" class="btn-back">Anasayfaya Dön</a>
+    </div>
+
+</body>
+</html>

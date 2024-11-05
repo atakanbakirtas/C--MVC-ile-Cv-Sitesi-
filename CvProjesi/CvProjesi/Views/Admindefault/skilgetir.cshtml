@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "skilgetir";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+@model List<tbl_skill>
+<div class="container mt-5">
+    <h2 class="mb-4">Eğitim Bilgileri Düzenleme</h2>
+    <form class="form-check">
+        <table class="table table-hover table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Yetenek</th>
+                    <th>Seviye</th>
+                    
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+
+
+
+                {
+                    <tr>
+                        <td>@user.SkillID</td>
+                        <td>@user.UserID</td>
+                        <td>@user.SkillName</td>
+                        <td>@user.ProficiencyLevel</td>
+                        
+
+                        <td>
+                            <a href="/Admindefault/edugüncelle/@user.SkillID" class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i> Düzenle
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Admindefault/Skilsil/@user.SkillID" class="btn btn-danger btn-sm">
+                                <i class="fas fa-edit"></i> Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/Admindefault/Skilekle/" class="btn btn-success">Yetenek Ekle</a>
+    </form>
+</div>
+
+<!-- Script files for Bootstrap and Font Awesome -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+

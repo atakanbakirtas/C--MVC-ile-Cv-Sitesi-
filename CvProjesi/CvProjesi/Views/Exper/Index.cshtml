@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+
+@model List<tbl_experience> 
+
+
+
+
+
+    
+
+    <div class="container-fluid p-0">
+
+        
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+            <div class="my-auto">
+                @foreach (var item in Model)
+                {
+                    string bastarih = "";
+
+                    string bittarih = "";
+                    if (item.StartDate.HasValue == true)
+                    {
+                        bastarih = item.StartDate.Value.ToString("dd/MM/yyyy");
+                        bittarih = item.EndDateDATE.Value.ToString("dd/MM/yyyy");
+
+                    }
+
+                    else
+                    {
+
+                    }
+
+
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                    <div class="resume-content mr-auto">
+                        <h3 class="mb-0">@item.CompanyName</h3>
+                        <div class="subheading mb-3">@item.JobTitle</div>
+                        <p>
+                            Müşteri isteğine bağlı masaüstü uygulama geliştirdim.
+                        </p>
+                        <p>
+                            Veri entegere projesi yazdım.
+                        </p>
+                        <p>
+                           İşletmenin satmış olduğu yazıcıların müşterilere kurulumunu sağlayıp ilgili platformlarda test aşamlarını gerçekleştirdim .
+                        </p>
+                    </div>
+                    <div class="resume-date text-md-right">
+                        <span class="text-primary">@bastarih - @bittarih</span>
+                    </div>
+                </div>
+                }
+
+
+
+            </div>
+
+        </section>
+
+        
+
+        
+
+        
+
+        
+
+    </div>
+
+ 

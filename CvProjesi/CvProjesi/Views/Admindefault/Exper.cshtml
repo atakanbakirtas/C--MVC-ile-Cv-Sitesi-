@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Exper";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+
+@model List<tbl_experience>
+<div class="container mt-5">
+    <h2 class="mb-4">Eğitim Bilgileri Düzenleme</h2>
+    <form class="form-check">
+        <table class="table table-hover table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Firma Adı</th>
+                    <th>Görev</th>
+                    <th>Başlangıç</th>
+                    <th>Bitiş</th>
+                    <th>Sil</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+
+
+
+                {
+                    <tr>
+                        <td>@user.ExperienceID</td>
+                        <td>@user.UserID</td>
+                        <td>@user.CompanyName</td>
+                        <td>@user.JobTitle</td>
+                        <td>@user.StartDate</td>
+                        <td>@user.EndDateDATE</td>
+                        <td>
+                            <a href="/Admindefault/Expersil/@user.ExperienceID" class="btn btn-danger btn-sm">
+                                <i class="fas fa-edit"></i> Sil
+                            </a>
+                        </td>
+
+                      
+                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/Admindefault/Experekle/" class="btn btn-success">Deneyim Ekle</a>
+    </form>
+</div>
+
+<!-- Script files for Bootstrap and Font Awesome -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+
+

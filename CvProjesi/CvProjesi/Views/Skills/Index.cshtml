@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+@model List<tbl_skill>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicons@1.8.0/css/devicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons.css">
+
+
+
+</head>
+
+
+
+
+
+
+<div class="container-fluid p-0">
+
+
+
+
+
+
+
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+      
+        <div class="my-auto">
+            <h2 class="mb-5">Yetenekler</h2>
+
+            <div class="subheading mb-3">Kodlama Dilleri &amp; Araçları</div>
+            <ul class="list-inline">
+
+                <li class="list-inline-item">
+                    <img src="~/web/resume-bootstrap4-master/img/cc.png" alt="" style="width:50px;">
+                </li>
+                <li class="list-inline-item">
+                    <img src="~/web/resume-bootstrap4-master/img/py.png" alt="" style="width:50px;">
+                </li>
+                <li class="list-inline-item">
+                    <img src="~/web/resume-bootstrap4-master/img/sql.png" alt="" style="width:50px;">
+                </li>
+                <li class="list-inline-item">
+                    <img src="~/web/resume-bootstrap4-master/img/sp.png" alt="" style="width:50px;">
+                </li>
+                <li class="list-inline-item">
+                    <img src="~/web/resume-bootstrap4-master/img/of.png" alt="" style="width:50px;">
+                </li>
+            </ul>
+
+            
+            <div class="subheading mb-3">Seviye</div>
+
+            @foreach (var item in Model) { 
+
+                <ul class="fa-ul mb-0">
+                    <li>
+                        <i class="fa-li fa fa-check"></i> 
+                        @item.SkillName    @item.ProficiencyLevel
+                    </li>
+
+                </ul>
+                }
+            
+        </div>
+           
+
+    </section>
+
+
+
+
+
+</div>
+
+

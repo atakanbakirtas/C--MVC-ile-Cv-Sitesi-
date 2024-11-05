@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Yönetim Paneli Ana Sayfa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .content-wrapper {
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .container {
+            max-width: 1200px; 
+            margin: 0 auto;
+        }
+
+        .card {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .card p {
+            color: #333;
+        }
+
+        .card i {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+
+   
+    <div class="content-wrapper">
+        <div class="container">
+            <br />
+            <br />
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-user-edit"></i> Profili Düzenle</h5>
+                            <p>Kendi biyografinizi düzenleyin ve güncel bilgilerle doldurun.</p>
+                            <a href="/Admindefault/Biografiler/" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-graduation-cap"></i> Eğitim Bilgileri Düzenle</h5>
+                            <p>Eğitim geçmişinizi güncelleyin ve yeni bilgiler ekleyin.</p>
+                            <a href="/Admindefault/Educek/" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-lightbulb"></i> Yetenekleri Düzenle</h5>
+                            <p>Sahip olduğunuz yetenekleri düzenleyin ve yenilerini ekleyin.</p>
+                            <a href="/Admindefault/skilgetir/" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-briefcase"></i> İş Deneyimi Düzenle</h5>
+                            <p>Geçmiş iş deneyimlerinizi gözden geçirin ve güncelleyin.</p>
+                            <a href="/Admindefault/Exper/" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-certificate"></i> Sertifikalar Düzenle</h5>
+                            <p>Aldığınız sertifikaları ve başarı belgelerini ekleyin.</p>
+                            <a href="#" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-envelope"></i> İletişim Bilgileri Düzenle</h5>
+                            <p>İletişim bilgilerinizi güncelleyin ve doğru olduğundan emin olun.</p>
+                            <a href="#" class="btn btn-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CvDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SocialMedia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_contact_tbl_user" FromRole="tbl_contact" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_education">
+    <Key>
+      <PropertyRef Name="EducationID" />
+    </Key>
+    <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SchoolName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Degree" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDateDATE" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_education_tbl_user" FromRole="tbl_education" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_experience">
+    <Key>
+      <PropertyRef Name="ExperienceID" />
+    </Key>
+    <Property Name="ExperienceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDateDATE" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_experience_tbl_user" FromRole="tbl_experience" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_projects">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProjectURL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_projects_tbl_user" FromRole="tbl_projects" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SkillName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProficiencyLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_user" Relationship="Self.FK_tbl_skill_tbl_user" FromRole="tbl_skill" ToRole="tbl_user" />
+  </EntityType>
+  <EntityType Name="tbl_user">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Biography" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LinkedIn" Type="String" MaxLength="260" FixedLength="false" Unicode="false" />
+    <Property Name="GitHub" Type="String" MaxLength="260" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_contact" Relationship="Self.FK_tbl_contact_tbl_user" FromRole="tbl_user" ToRole="tbl_contact" />
+    <NavigationProperty Name="tbl_education" Relationship="Self.FK_tbl_education_tbl_user" FromRole="tbl_user" ToRole="tbl_education" />
+    <NavigationProperty Name="tbl_experience" Relationship="Self.FK_tbl_experience_tbl_user" FromRole="tbl_user" ToRole="tbl_experience" />
+    <NavigationProperty Name="tbl_projects" Relationship="Self.FK_tbl_projects_tbl_user" FromRole="tbl_user" ToRole="tbl_projects" />
+    <NavigationProperty Name="tbl_skill" Relationship="Self.FK_tbl_skill_tbl_user" FromRole="tbl_user" ToRole="tbl_skill" />
+  </EntityType>
+  <Association Name="FK_tbl_contact_tbl_user">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="tbl_contact" Type="Self.tbl_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_contact">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_education_tbl_user">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="tbl_education" Type="Self.tbl_education" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_education">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_experience_tbl_user">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="tbl_experience" Type="Self.tbl_experience" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_experience">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_projects_tbl_user">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="tbl_projects" Type="Self.tbl_projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_projects">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_skill_tbl_user">
+    <End Role="tbl_user" Type="Self.tbl_user" Multiplicity="0..1" />
+    <End Role="tbl_skill" Type="Self.tbl_skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_user">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tbl_skill">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CvDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tbl_admin" EntityType="Self.tbl_admin" />
+    <EntitySet Name="tbl_contact" EntityType="Self.tbl_contact" />
+    <EntitySet Name="tbl_education" EntityType="Self.tbl_education" />
+    <EntitySet Name="tbl_experience" EntityType="Self.tbl_experience" />
+    <EntitySet Name="tbl_projects" EntityType="Self.tbl_projects" />
+    <EntitySet Name="tbl_skill" EntityType="Self.tbl_skill" />
+    <EntitySet Name="tbl_user" EntityType="Self.tbl_user" />
+    <AssociationSet Name="FK_tbl_contact_tbl_user" Association="Self.FK_tbl_contact_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_contact" EntitySet="tbl_contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_education_tbl_user" Association="Self.FK_tbl_education_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_education" EntitySet="tbl_education" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_experience_tbl_user" Association="Self.FK_tbl_experience_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_experience" EntitySet="tbl_experience" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_projects_tbl_user" Association="Self.FK_tbl_projects_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_projects" EntitySet="tbl_projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_skill_tbl_user" Association="Self.FK_tbl_skill_tbl_user">
+      <End Role="tbl_user" EntitySet="tbl_user" />
+      <End Role="tbl_skill" EntitySet="tbl_skill" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

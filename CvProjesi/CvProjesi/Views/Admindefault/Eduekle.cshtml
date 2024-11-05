@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Eduekle";
+    Layout = "~/Views/Shared/AdminMaster.cshtml";
+}
+
+<h2 class="text-center">Yetenek Ekle</h2>
+<form class="form-group" method="post">
+    <div class="mb-3">
+        <input name="UserID" type="text" class="form-control" required="" placeholder="Kullanıcı ID" />
+    </div>
+
+    <div class="mb-3">
+        <input name="SchoolName" type="text" class="form-control" required="" placeholder="Okul adı" />
+    </div>
+
+    <div class="mb-3">
+        <input name="Degree" type="text" class="form-control" required="" placeholder="Bölüm" />
+    </div>
+
+    <div class="mb-3">
+        <input name="StartDate" type="date" class="form-control" required="" placeholder="Başlangıç tarihi" />
+    </div>
+
+    <div class="mb-3">
+        <input name="EndDateDATE" type="date" class="form-control" required="" placeholder="Bitiş tarihi" />
+    </div>
+
+    <div class="mb-3">
+        <input name="Description" type="text" class="form-control" required="" placeholder="Açıklama" />
+    </div>
+
+    <div class="d-grid">
+        <button type="submit" class="btn btn-info btn-lg" > YetenekEğitim </button>
+        </div>
+</form>
+
+

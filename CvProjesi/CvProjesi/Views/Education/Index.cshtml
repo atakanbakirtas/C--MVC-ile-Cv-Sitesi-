@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterPage.cshtml";
+}
+@model List<tbl_education>
+
+
+
+
+
+
+
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="education">
+
+    <div class="container-fluid p-0">
+
+
+
+
+
+        <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+
+            @foreach (var education in Model)
+
+            {
+                // bunuyapmamızın temel mantığı date tarihinin boş gelme olasılığı kontrol et diyip yazıdrdık
+                string bastarih = "";
+
+                string bittarih = "";
+                if (education.StartDate.HasValue == true)
+                {
+                    bastarih = @education.StartDate.Value.ToString("dd/MM/yyyy");
+                    bittarih = @education.EndDateDATE.Value.ToString("dd/MM/yyyy");
+
+                }
+
+                else
+                {
+
+                }
+
+                <div class="resume-date text-md-right">
+                    <span class="text-primary" style="font-size:large">@bastarih ----   @bittarih </span>
+                </div>
+                <div class="my-auto" style="margin-left:300px;">
+
+
+                    <br />
+                    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                        <div class="resume-content mr-auto">
+                            <img src="~/web/resume-bootstrap4-master/img/ktü.png" alt="" style="width:150px; margin-left:60px;">
+                            <h3 class="mb-0">@education.SchoolName</h3>
+
+
+                            <div class="subheading mb-3">İKTİSADİ ve İDARİ BİLİMLER FAKÜLTESİ</div>
+                            <div>@education.Degree / LİSANS</div>
+                            <p>AGO:  3.56</p>
+                            <br />
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            }
+        </section>
+
+
+
+
+
+
+
+    </div>
+
+    </section>
+
+
+
+

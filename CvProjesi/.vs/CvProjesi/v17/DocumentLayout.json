@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Atakan\\Desktop\\Sipari\u015F Onaylama Projesi\\CvProjesi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FAF01289-192F-4D8A-A66B-7796A0153B54}|CvProjesi\\CvProjesi.csproj|c:\\users\\atakan\\desktop\\sipari\u015F onaylama projesi\\cvprojesi\\cvprojesi\\views\\exper\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FAF01289-192F-4D8A-A66B-7796A0153B54}|CvProjesi\\CvProjesi.csproj|solutionrelative:cvprojesi\\views\\exper\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Atakan\\Desktop\\Sipari\u015F Onaylama Projesi\\CvProjesi\\CvProjesi\\Views\\Exper\\Index.cshtml",
+              "RelativeDocumentMoniker": "CvProjesi\\Views\\Exper\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Atakan\\Desktop\\Sipari\u015F Onaylama Projesi\\CvProjesi\\CvProjesi\\Views\\Exper\\Index.cshtml",
+              "RelativeToolTip": "CvProjesi\\Views\\Exper\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-05T14:22:57.892Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
